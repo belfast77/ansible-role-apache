@@ -7,6 +7,9 @@ lint: |
   set -e
   yamllint .
   ansible-lint
+  options:
+    config-data:
+      ignore: **/lib/
 platforms:
   - name: instance
     image: "geerlingguy/docker-${MOLECULE_DISTRO:-centos7}-ansible:latest"
